@@ -4,6 +4,8 @@
  */
 package ooc.yoursolution;
 
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
 import ooc.enums.Make;
 import ooc.enums.Month;
@@ -13,10 +15,30 @@ import ooc.enums.Month;
  * @author Thaynna Vieira
  */
 public class Car implements CarInterface{
+    
+    private Map<Month, boolean[]> availability;
+    private Make make;
+    private double rate;
+    private int id;
+    
+    
+    public Car (int id, Make make, double rate) { 
+        this.make = make;
+        this.id = id;
+        this.rate = rate;
+        this.availability = createAvailability(); 
+    }
 
     @Override
     public Map<Month, boolean[]> createAvailability() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        Map<Month, boolean[]> cal = new HashMap<>();
+        for (Month month :Month.values()) {
+            
+            boolean[] availability = new boolean[month.getNumberOfDays()]; 
+            Arrays.fill(availability,true); 
+            cal.put(month, availability); 
+        }
+        return cal;
     }
 
     @Override
