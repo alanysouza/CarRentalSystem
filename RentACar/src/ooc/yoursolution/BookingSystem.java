@@ -38,6 +38,11 @@ public class BookingSystem implements BookingSystemInterface{
             int numberOfCarsToCreate = Integer.parseInt(carDetails[2]);
             
             
+            for (int i = 1; i <= numberOfCarsToCreate; i++) {
+                CarInterface car = new Car(i,make,rate);
+                cars.add(car);
+            }
+            
         }
         
     rentACar.setCars(cars);  // set the cars attribute on the rentACar object
