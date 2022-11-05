@@ -7,6 +7,7 @@ package ooc.yoursolution;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import ooc.enums.Make;
 
 /**
  *
@@ -38,7 +39,7 @@ public class BookingSystem implements BookingSystemInterface{
             
         }
         
-        
+    rentACar.setCars(cars);    
         return rentACar;
     }
     
