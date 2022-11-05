@@ -28,18 +28,19 @@ public class BookingSystem implements BookingSystemInterface{
 
         ArrayList<CarInterface> cars = new ArrayList<>(); //create new arraylist to store created cars
         
-        while ((carLine = in.readLine()) !=null){
-            String[] carDetails = carLine.split(":");
+        // while there are more lines in the reader keep creating feed items
+        while ((carLine = in.readLine()) !=null){ // car details will always be on the following lines
+            String[] carDetails = carLine.split(":"); // search source https://www.baeldung.com/string/split
             String makeString = carDetails[0];
             Make make = Make.valueOf(makeString);
             String rateString = carDetails[1];
-            double rate = Double.parseDouble(rateString);
+            double rate = Double.parseDouble(rateString); // search sourcehttps://www.geeksforgeeks.org/convert-string-to-double-in-java/
             int numberOfCarsToCreate = Integer.parseInt(carDetails[2]);
             
             
         }
         
-    rentACar.setCars(cars);    
+    rentACar.setCars(cars);  // set the cars attribute on the rentACar object
         return rentACar;
     }
     
