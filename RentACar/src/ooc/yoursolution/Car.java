@@ -12,7 +12,7 @@ import ooc.enums.Month;
 
 /**
  *
- * @author Thaynna Vieira
+ * @author Thaynna Vieira and Alany
  */
 public class Car implements CarInterface{
     
@@ -81,12 +81,20 @@ public class Car implements CarInterface{
 
     @Override
     public boolean isAvailable(Month month, int day) {
-
+         boolean[] availability = this.availability.get(month);
+        return availability[day-1]; //arrays are zero based so access the availability using day -1
     }
 
     @Override
     public boolean book(Month month, int day) {
-
+         boolean[] availability = this.availability.get(month); // get the boolean array which represents the available days to book in the month
+        boolean isAvailable = availability[day-1];// get the availability boolean value for the day in the month
+        if (isAvailable) { // if the car is available on the day and month
+            availability[day-1] = false; // update the availability boolean array at index 'day' with value false
+            this.availability.put(month,availability); // update the car availability - set the value for the key month as the updated array
+            return false; // should return true or false if the booking is completed
+        }
+        return true; // should return true or false if the booking is completed
     }
     
 }

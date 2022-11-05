@@ -11,7 +11,7 @@ import ooc.enums.Month;
 
 /**
  *
- * @author alany
+ * @author Alany and Thaynna
  */
 public class RentACar implements RentACarInterface{
     
