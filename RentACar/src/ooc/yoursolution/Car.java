@@ -22,21 +22,21 @@ public class Car implements CarInterface{
     private int id;
     
     
-    public Car (int id, Make make, double rate) { 
+    public Car (int id, Make make, double rate) { //constructor to set the id, make and rate when creating a new Car();
         this.make = make;
         this.id = id;
         this.rate = rate;
-        this.availability = createAvailability(); 
+        this.availability = createAvailability(); // populate the availability Map with default values when the Car is created
     }
 
     @Override
     public Map<Month, boolean[]> createAvailability() {
         Map<Month, boolean[]> cal = new HashMap<>();
         for (Month month :Month.values()) {
-            
-            boolean[] availability = new boolean[month.getNumberOfDays()]; 
-            Arrays.fill(availability,true); 
-            cal.put(month, availability); 
+            //create the value for month
+            boolean[] availability = new boolean[month.getNumberOfDays()]; //boolean array with size the same as the number of days in the current month
+            Arrays.fill(availability,true); // set the default value for all days in the month to true
+            cal.put(month, availability); // put the month and availability, key value pair in the Map<Month, boolean[]> cal
         }
         return cal;
     }
