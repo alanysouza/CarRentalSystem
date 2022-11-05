@@ -6,7 +6,7 @@ package ooc.yoursolution;
 
 /**
  *
- * @author Tayanne Vieira
+ * @author Thaynna Vieira
  */
 public class Car {
     
