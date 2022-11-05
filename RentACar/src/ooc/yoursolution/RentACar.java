@@ -17,6 +17,10 @@ public class RentACar implements RentACarInterface{
     
     private ArrayList<Cars> carsList;
 
+    RentACar(String name) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     @Override
     public List<CarInterface> getCars() {
        ArrayList<CarInterface> cars = new ArrayList<>(); //creat a list of cars
