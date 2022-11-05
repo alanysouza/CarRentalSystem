@@ -15,25 +15,22 @@ import ooc.enums.Month;
  */
 public class RentACar implements RentACarInterface{
     
-    private ArrayList<Cars> carsList;
+    private List<CarInterface> cars;
+    private String name;
 
-    RentACar(String name) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public RentACar(String name) {
+        this.name = name;
+        this.cars = new ArrayList<>(); // using constructor to initialize the cars attribute to empty array list
     }
 
     @Override
     public List<CarInterface> getCars() {
-       ArrayList<CarInterface> cars = new ArrayList<>(); //creat a list of cars
-       
-       for()
-       
-       
        return cars;
     }
 
     @Override
     public void setCars(List<CarInterface> cars) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+       this.cars = cars;
     }
 
     @Override
